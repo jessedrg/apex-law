@@ -42,14 +42,6 @@ export default function Home() {
               A boutique search firm for partners, counsel and senior associates &mdash; retained by
               the firms and companies that set the market.
             </p>
-            <div className="cta-row">
-              <a className="btn btn-primary" href="#contact">
-                Retain us for a search
-              </a>
-              <a className="btn btn-ghost" href="#candidates">
-                I&rsquo;m a lawyer
-              </a>
-            </div>
           </div>
 
           <div className="mandates">
