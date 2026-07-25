@@ -21,6 +21,11 @@ export const metadata: Metadata = {
   title: "Apexdot — Legal search, New York & San Francisco",
   description:
     "A boutique legal search firm placing partners, counsel and senior associates at the firms and companies that set the market.",
+  icons: {
+    icon: [{ url: "/logomark.png", type: "image/png" }],
+    shortcut: "/logomark.png",
+    apple: "/logomark.png",
+  },
   openGraph: {
     title: "Apexdot — Legal search, New York & San Francisco",
     description:
