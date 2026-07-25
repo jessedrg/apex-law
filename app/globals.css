@@ -87,6 +87,63 @@ header.site {
 .pill:hover { background: var(--accent); color: #fff; text-decoration: none; }
 .pill span { opacity: 0.55; }
 
+/* ---------- mobile nav ---------- */
+.burger {
+  display: none;
+  position: relative;
+  width: 42px; height: 42px;
+  margin: -8px 0;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  padding: 0;
+  z-index: 60;
+}
+.burger span {
+  position: absolute; left: 50%; top: 50%;
+  width: 18px; height: 1.6px; background: var(--ink); border-radius: 2px;
+  transform: translate(-50%, -50%);
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease;
+}
+.burger span:first-child { transform: translate(-50%, calc(-50% - 4px)); }
+.burger span:last-child { transform: translate(-50%, calc(-50% + 4px)); }
+.burger.is-open span:first-child { transform: translate(-50%, -50%) rotate(45deg); }
+.burger.is-open span:last-child { transform: translate(-50%, -50%) rotate(-45deg); }
+
+.m-scrim {
+  display: none;
+  position: fixed; inset: 0; z-index: 55;
+  background: rgba(0, 0, 0, 0.35);
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.3s ease;
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+}
+.m-scrim.is-open { opacity: 1; pointer-events: auto; }
+
+.m-menu {
+  display: none;
+  position: fixed; top: 0; right: 0; z-index: 58;
+  height: 100dvh; width: min(84vw, 340px);
+  background: #fff;
+  border-left: 1px solid var(--line);
+  padding: calc(env(safe-area-inset-top) + 82px) 26px calc(env(safe-area-inset-bottom) + 30px);
+  flex-direction: column;
+  transform: translateX(100%);
+  transition: transform 0.36s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: -20px 0 60px rgba(0, 0, 0, 0.12);
+}
+.m-menu.is-open { transform: translateX(0); }
+.m-links { display: flex; flex-direction: column; }
+.m-links a {
+  font-size: 22px; letter-spacing: -0.02em; color: var(--ink);
+  padding: 16px 0; border-bottom: 1px solid var(--line);
+}
+.m-links a:hover { text-decoration: none; color: var(--accent); }
+.m-cta { margin-top: auto; text-align: center; font-size: 16px; }
+.m-cta:hover { text-decoration: none; }
+
 /* ---------- hero ---------- */
 .hero { position: relative; overflow: hidden; border-bottom: 1px solid var(--line); }
 .hero .glow {
@@ -314,4 +371,59 @@ footer.site .links { display: flex; gap: 22px; }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0.01ms !important; animation-delay: 0ms !important; transition-duration: 0.01ms !important; }
+}
+
+/* ---------- responsive ---------- */
+@media (max-width: 860px) {
+  .bar .wrap { flex-wrap: nowrap; padding-top: 12px; padding-bottom: 12px; }
+  .nav { display: none; }
+  .burger { display: block; }
+  .m-scrim { display: block; }
+  .m-menu { display: flex; }
+
+  .hero .wrap {
+    grid-template-columns: 1fr;
+    align-items: start;
+    gap: clamp(34px, 8vw, 48px);
+  }
+  .hero-sub { max-width: 100%; }
+  .cta-row .btn { flex: 1 1 auto; text-align: center; }
+}
+
+@media (max-width: 640px) {
+  .wrap { padding-left: 18px; padding-right: 18px; }
+
+  /* top strip: keep it clean on small screens */
+  .strip .wrap { gap: 12px; }
+  .strip .clocks { gap: 12px; }
+
+  /* hero scales down cleanly */
+  h1.hero-title { font-size: clamp(38px, 12vw, 60px); }
+  .hero .wrap { padding-top: clamp(40px, 12vw, 64px); }
+  .hero-sub { font-size: 16px; }
+  .cta-row { gap: 8px; }
+  .btn { padding: 12px 20px; font-size: 14.5px; }
+
+  /* full-width CTA buttons feel better on phones */
+  .cta-row .btn { flex: 1 1 100%; }
+
+  /* cities take full width and shorter height */
+  .cities { padding: 0 18px; }
+  .city { height: clamp(320px, 62vw, 420px); }
+
+  /* practice list market label under name */
+  .list .item { padding: 16px 0; }
+
+  /* closing section CTA stacks */
+  .closing .cta-row { flex-direction: column; }
+  .closing .cta-row .btn { flex: 1 1 auto; }
+
+  /* footer stacks */
+  footer.site .wrap { flex-direction: column; align-items: flex-start; gap: 14px; }
+}
+
+@media (max-width: 400px) {
+  /* hide seconds-ticking clocks label crowding on tiny screens */
+  .strip .status { font-size: 10px; }
+  h1.hero-title { font-size: clamp(34px, 13vw, 46px); }
 }

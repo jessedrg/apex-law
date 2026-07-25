@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Clocks from "./Clocks";
+import Nav from "./Nav";
 import { mandates, practices, OPEN_MANDATES, EMAIL, PHONE } from "./data";
 
 export default function Home() {
@@ -16,21 +17,7 @@ export default function Home() {
           </div>
         </div>
         <div className="bar">
-          <nav className="wrap">
-            <a className="logo" href="#top">
-              <span>apexdot</span>
-              <i />
-              <em>io</em>
-            </a>
-            <div className="nav">
-              <a href="#firms">For firms</a>
-              <a href="#candidates">For lawyers</a>
-              <a href="#practice">Practices</a>
-              <a className="pill" href="#contact">
-                Start a search <span>&rarr;</span>
-              </a>
-            </div>
-          </nav>
+          <Nav />
         </div>
       </header>
 
