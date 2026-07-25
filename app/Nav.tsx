@@ -29,7 +29,7 @@ export default function Nav() {
   return (
     <nav className="wrap">
       <a className="logo" href="#top" onClick={() => setOpen(false)} aria-label="Apexdot home">
-        <img src="/logomark.svg" alt="Apexdot" width={30} height={30} />
+        <img src="/logomark.png" alt="Apexdot" width={30} height={30} />
       </a>
 
       {/* Desktop */}
