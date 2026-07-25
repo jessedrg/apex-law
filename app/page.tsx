@@ -246,7 +246,11 @@ export default function Home() {
           <div className="links">
             <a href="#top">Privacy</a>
             <a href="#top">Terms</a>
-            <a href="https://www.linkedin.com" target="_blank" rel="noreferrer">
+            <a
+              href="https://www.linkedin.com/company/apexdot"
+              target="_blank"
+              rel="noreferrer"
+            >
               LinkedIn
             </a>
           </div>
