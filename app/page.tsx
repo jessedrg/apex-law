@@ -240,7 +240,7 @@ export default function Home() {
       <footer className="site">
         <div className="wrap">
           <div className="foot-brand">
-            <img src="/logomark.svg" alt="Apexdot" width={34} height={34} />
+            <img src="/logomark.png" alt="Apexdot" width={34} height={34} />
             <p>&copy; 2026 Apexdot LLC &middot; Legal search &middot; New York &amp; San Francisco</p>
           </div>
           <div className="links">
