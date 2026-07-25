@@ -1,10 +1,5 @@
-import { Pool } from "pg"
+import { neon } from "@neondatabase/serverless"
 
-// A single shared connection pool for the app.
-const globalForDb = globalThis as unknown as { pool?: Pool }
-
-export const pool =
-  globalForDb.pool ??
-  new Pool({ connectionString: process.env.DATABASE_URL })
-
-if (process.env.NODE_ENV !== "production") globalForDb.pool = pool
+// neon() creates a lightweight HTTP-based SQL function.
+// Works in both Node.js serverless (Vercel) and Edge runtimes.
+export const sql = neon(process.env.DATABASE_URL!)
