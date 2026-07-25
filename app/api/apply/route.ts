@@ -42,10 +42,10 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: "Max salary can’t be lower than the minimum." }, { status: 400 })
     }
 
-    // Upload the resume to a private Blob store (server-side).
+    // Upload the resume to Blob storage (server-side).
     const safeName = file.name.replace(/[^a-zA-Z0-9._-]/g, "_")
     const blob = await put(`resumes/${Date.now()}-${safeName}`, file, {
-      access: "private",
+      access: "public",
       addRandomSuffix: true,
     })
 
@@ -53,7 +53,7 @@ export async function POST(request: NextRequest) {
       `INSERT INTO candidate_submissions
         (full_name, phone, resume_pathname, resume_filename, salary_min, salary_max, salary_currency)
        VALUES ($1, $2, $3, $4, $5, $6, $7)`,
-      [fullName || null, phone, blob.pathname, file.name, salaryMin, salaryMax, currency],
+      [fullName || null, phone, blob.url, file.name, salaryMin, salaryMax, currency],
     )
 
     return NextResponse.json({ ok: true })
