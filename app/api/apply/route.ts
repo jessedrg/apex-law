@@ -1,8 +1,6 @@
 import { put } from "@vercel/blob"
 import { type NextRequest, NextResponse } from "next/server"
-import { pool } from "@/lib/db"
-
-export const runtime = "nodejs"
+import { sql } from "@/lib/db"
 
 const MAX_BYTES = 8 * 1024 * 1024 // 8MB
 const ALLOWED = [
@@ -42,19 +40,25 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: "Max salary can’t be lower than the minimum." }, { status: 400 })
     }
 
-    // Upload the resume to a private Blob store (server-side).
+    // Upload the resume to Blob storage (server-side).
     const safeName = file.name.replace(/[^a-zA-Z0-9._-]/g, "_")
     const blob = await put(`resumes/${Date.now()}-${safeName}`, file, {
-      access: "private",
+      access: "public",
       addRandomSuffix: true,
     })
 
-    await pool.query(
-      `INSERT INTO candidate_submissions
+    await sql`
+      INSERT INTO candidate_submissions
         (full_name, phone, resume_pathname, resume_filename, salary_min, salary_max, salary_currency)
-       VALUES ($1, $2, $3, $4, $5, $6, $7)`,
-      [fullName || null, phone, blob.pathname, file.name, salaryMin, salaryMax, currency],
-    )
+       VALUES (
+         ${fullName || null},
+         ${phone},
+         ${blob.url},
+         ${file.name},
+         ${salaryMin},
+         ${salaryMax},
+         ${currency}
+       )`
 
     return NextResponse.json({ ok: true })
   } catch (error) {
