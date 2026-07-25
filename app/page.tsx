@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Clocks from "./Clocks";
 import Nav from "./Nav";
-import { mandates, practices, OPEN_MANDATES, EMAIL, PHONE } from "./data";
+import { mandates, practices, OPEN_MANDATES } from "./data";
 
 export default function Home() {
   return (
@@ -228,11 +228,8 @@ export default function Home() {
         </h2>
         <p>Confidential by default. A reply within one business day.</p>
         <div className="cta-row">
-          <a className="btn btn-primary" href={`mailto:${EMAIL}`}>
-            {EMAIL}
-          </a>
-          <a className="btn btn-outline" href={`tel:${PHONE.replace(/[^+\d]/g, "")}`}>
-            {PHONE}
+          <a className="btn btn-primary" href="/apply">
+            Apply
           </a>
         </div>
       </section>
@@ -246,7 +243,11 @@ export default function Home() {
           <div className="links">
             <a href="#top">Privacy</a>
             <a href="#top">Terms</a>
-            <a href="https://www.linkedin.com" target="_blank" rel="noreferrer">
+            <a
+              href="https://www.linkedin.com/company/apexdot"
+              target="_blank"
+              rel="noreferrer"
+            >
               LinkedIn
             </a>
           </div>
