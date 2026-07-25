@@ -39,8 +39,8 @@ export default function Nav() {
             {l.label}
           </a>
         ))}
-        <a className="pill" href="#contact">
-          Start a search <span>&rarr;</span>
+        <a className="pill" href="/apply">
+          Apply <span>&rarr;</span>
         </a>
       </div>
 
@@ -77,8 +77,8 @@ export default function Nav() {
             </a>
           ))}
         </div>
-        <a className="btn btn-primary m-cta" href="#contact" onClick={() => setOpen(false)}>
-          Start a search
+        <a className="btn btn-primary m-cta" href="/apply" onClick={() => setOpen(false)}>
+          Apply
         </a>
       </div>
     </nav>
