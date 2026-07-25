@@ -68,17 +68,18 @@ header.site {
 .logo:hover { text-decoration: none; }
 .logo img { display: block; width: 30px; height: 30px; }
 .nav { display: flex; align-items: center; gap: clamp(16px, 2.6vw, 30px); flex-wrap: wrap; }
-.nav a {
+.nav a:not(.pill) {
   font-size: 13.5px; letter-spacing: -0.01em; color: #494950;
   padding-bottom: 2px; border-bottom: 1px solid transparent;
   transition: color 0.2s ease, border-color 0.2s ease;
 }
-.nav a:hover { color: var(--ink); border-bottom-color: var(--ink); text-decoration: none; }
+.nav a:not(.pill):hover { color: var(--ink); border-bottom-color: var(--ink); text-decoration: none; }
 .pill {
-  display: inline-flex; align-items: center; gap: 8px;
-  font-size: 13.5px; letter-spacing: -0.01em; color: #fff; background: var(--ink);
-  padding: 8px 17px; border-radius: 980px; transition: background 0.2s ease;
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  font-size: 13.5px; line-height: 1; letter-spacing: -0.01em; color: #fff; background: var(--ink);
+  padding: 10px 17px; border-radius: 980px; transition: background 0.2s ease;
 }
+.pill span { display: inline-flex; align-items: center; }
 .pill:hover { background: var(--accent); color: #fff; text-decoration: none; }
 .pill span { opacity: 0.55; }
 
