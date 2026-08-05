@@ -144,8 +144,7 @@ header.site {
 .hero { position: relative; overflow: hidden; border-bottom: 1px solid var(--line); }
 .hero .glow {
   position: absolute; top: -22%; left: -8%; width: 62%; height: 120%; pointer-events: none;
-  background: radial-gradient(closest-side, rgba(0, 102, 204, 0.13), rgba(0, 102, 204, 0) 72%);
-  animation: apx-glow 16s ease-in-out infinite;
+  background: radial-gradient(closest-side, rgba(0, 102, 204, 0.1), rgba(0, 102, 204, 0) 72%);
 }
 .hero .wrap {
   position: relative;
@@ -351,18 +350,14 @@ footer.site .links { display: flex; gap: 22px; }
   to { transform: translateY(0) rotate(0deg); }
 }
 @keyframes apx-serif {
-  from { transform: translateY(112%); opacity: 0; filter: blur(9px); }
-  to { transform: translateY(0); opacity: 1; filter: blur(0); }
+  from { transform: translateY(112%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
 }
 @keyframes apx-track {
   from { opacity: 0; letter-spacing: 0.34em; }
   to { opacity: 1; letter-spacing: 0.14em; }
 }
 @keyframes apx-sweep { from { transform: scaleX(0); } to { transform: scaleX(1); } }
-@keyframes apx-glow {
-  0%, 100% { transform: translate3d(-4%, 0, 0) scale(1); opacity: 0.55; }
-  50% { transform: translate3d(6%, -3%, 0) scale(1.12); opacity: 0.85; }
-}
 @keyframes apx-row {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }

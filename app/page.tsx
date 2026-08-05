@@ -31,7 +31,7 @@ export default function Home() {
                 <span className="l1">The top 1%</span>
               </span>
               <span className="mask">
-                <span className="l2">of legal talent,</span>
+                <span className="l2">of legal &amp; tech talent,</span>
               </span>
               <span className="mask last">
                 <span className="l3">introduced properly.</span>
@@ -73,7 +73,7 @@ export default function Home() {
           </div>
           <div>
             <h3>Two markets</h3>
-            <p>Manhattan and the Bay Area only. Deep beats broad in legal search.</p>
+            <p>Manhattan and the Bay Area only. Deep beats broad in executive search.</p>
           </div>
           <div>
             <h3>Discreet</h3>
@@ -220,7 +220,7 @@ export default function Home() {
             <div>
               <p className="n">02</p>
               <h3>Map</h3>
-              <p>The full universe of qualified lawyers in the market, narrowed to a shortlist we can defend line by line.</p>
+              <p>The full universe of qualified people in the market, narrowed to a shortlist we can defend line by line.</p>
             </div>
             <div>
               <p className="n">03</p>
@@ -249,7 +249,7 @@ export default function Home() {
         <div className="wrap">
           <div className="foot-brand">
             <img src="/logomark.png" alt="Apexdot" width={34} height={34} />
-            <p>&copy; 2026 Apexdot LLC &middot; Legal search &middot; New York &amp; San Francisco</p>
+            <p>&copy; 2026 Apexdot LLC &middot; Legal &amp; tech search &middot; New York &amp; San Francisco</p>
           </div>
           <div className="links">
             <a href="#top">Privacy</a>
