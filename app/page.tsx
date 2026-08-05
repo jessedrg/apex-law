@@ -25,7 +25,7 @@ export default function Home() {
         <div className="glow" />
         <div className="wrap">
           <div>
-            <p className="eyebrow">Legal &amp; tech search &nbsp;&mdash; &nbsp;New York &amp; San Francisco</p>
+            <p className="eyebrow">Legal &amp; tech search &nbsp;&middot;&nbsp; New York &amp; San Francisco</p>
             <h1 className="hero-title">
               <span className="mask">
                 <span className="l1">The top 1%</span>
@@ -39,7 +39,7 @@ export default function Home() {
             </h1>
             <span className="rule" />
             <p className="hero-sub">
-              A boutique search firm for partners, counsel and senior associates &mdash; and the
+              A boutique search firm for partners, counsel and senior associates, and the
               engineers, AI/ML and go-to-market leaders who build the companies that set the market.
             </p>
           </div>
