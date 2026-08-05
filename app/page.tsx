@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Clocks from "./Clocks";
 import Nav from "./Nav";
-import { mandates, practices, OPEN_MANDATES } from "./data";
+import { mandates, practices, techPractices, OPEN_MANDATES } from "./data";
 
 export default function Home() {
   return (
@@ -25,13 +25,13 @@ export default function Home() {
         <div className="glow" />
         <div className="wrap">
           <div>
-            <p className="eyebrow">Legal search &nbsp;&mdash; &nbsp;New York &amp; San Francisco</p>
+            <p className="eyebrow">Legal &amp; tech search &nbsp;&middot;&nbsp; New York &amp; San Francisco</p>
             <h1 className="hero-title">
               <span className="mask">
                 <span className="l1">The top 1%</span>
               </span>
               <span className="mask">
-                <span className="l2">of legal talent,</span>
+                <span className="l2">of legal &amp; tech talent,</span>
               </span>
               <span className="mask last">
                 <span className="l3">introduced properly.</span>
@@ -39,8 +39,8 @@ export default function Home() {
             </h1>
             <span className="rule" />
             <p className="hero-sub">
-              A boutique search firm for partners, counsel and senior associates &mdash; retained by
-              the firms and companies that set the market.
+              A boutique search firm for partners, counsel and senior associates, and the
+              engineers, AI/ML and go-to-market leaders who build the companies that set the market.
             </p>
           </div>
 
@@ -73,7 +73,7 @@ export default function Home() {
           </div>
           <div>
             <h3>Two markets</h3>
-            <p>Manhattan and the Bay Area only. Deep beats broad in legal search.</p>
+            <p>Manhattan and the Bay Area only. Deep beats broad in executive search.</p>
           </div>
           <div>
             <h3>Discreet</h3>
@@ -189,6 +189,25 @@ export default function Home() {
         </div>
       </section>
 
+      <section id="tech" className="block tech">
+        <div className="wrap">
+          <p className="kicker">Beyond legal</p>
+          <h2 className="mid">We run tech searches too.</h2>
+          <p className="lede">
+            The same discreet, retained approach applied to the people who build and sell the
+            product &mdash; from founding engineers to go-to-market leaders and applied AI teams.
+          </p>
+          <div className="list tech-list">
+            {techPractices.map((t) => (
+              <div className="item" key={t.name}>
+                <span className="name">{t.name}</span>
+                <span className="market">{t.market}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="block">
         <div className="wrap">
           <h2 className="mid">How a search runs.</h2>
@@ -201,7 +220,7 @@ export default function Home() {
             <div>
               <p className="n">02</p>
               <h3>Map</h3>
-              <p>The full universe of qualified lawyers in the market, narrowed to a shortlist we can defend line by line.</p>
+              <p>The full universe of qualified people in the market, narrowed to a shortlist we can defend line by line.</p>
             </div>
             <div>
               <p className="n">03</p>
@@ -230,7 +249,7 @@ export default function Home() {
         <div className="wrap">
           <div className="foot-brand">
             <img src="/logomark.png" alt="Apexdot" width={34} height={34} />
-            <p>&copy; 2026 Apexdot LLC &middot; Legal search &middot; New York &amp; San Francisco</p>
+            <p>&copy; 2026 Apexdot LLC &middot; Legal &amp; tech search &middot; New York &amp; San Francisco</p>
           </div>
           <div className="links">
             <a href="#top">Privacy</a>

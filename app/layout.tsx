@@ -18,18 +18,18 @@ const mono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Apexdot — Legal search, New York & San Francisco",
+  title: "Apexdot — Legal & tech search, New York & San Francisco",
   description:
-    "A boutique legal search firm placing partners, counsel and senior associates at the firms and companies that set the market.",
+    "A boutique search firm placing top legal talent and the engineers, AI/ML and go-to-market leaders who build the companies that set the market.",
   icons: {
     icon: [{ url: "/logomark.png", type: "image/png" }],
     shortcut: "/logomark.png",
     apple: "/logomark.png",
   },
   openGraph: {
-    title: "Apexdot — Legal search, New York & San Francisco",
+    title: "Apexdot — Legal & tech search, New York & San Francisco",
     description:
-      "A boutique legal search firm placing partners, counsel and senior associates at the firms and companies that set the market.",
+      "A boutique search firm placing top legal talent and the engineers, AI/ML and go-to-market leaders who build the companies that set the market.",
     url: "https://apexdot.io",
     siteName: "Apexdot",
     type: "website",

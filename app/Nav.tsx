@@ -6,6 +6,7 @@ const links = [
   { href: "#firms", label: "For firms" },
   { href: "/apply", label: "For lawyers" },
   { href: "#practice", label: "Practices" },
+  { href: "#tech", label: "Tech" },
 ];
 
 export default function Nav() {
