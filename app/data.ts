@@ -18,6 +18,15 @@ export const practices = [
   { name: "Executive compensation", market: "NY · SF" },
 ];
 
+export const techPractices = [
+  { name: "Engineering & platform", market: "NY · SF" },
+  { name: "AI / ML & research", market: "SF" },
+  { name: "Go-to-market & sales", market: "NY · SF" },
+  { name: "Product & design", market: "SF" },
+  { name: "Data & infrastructure", market: "NY · SF" },
+  { name: "Founding & executive", market: "SF" },
+];
+
 export const OPEN_MANDATES = 9;
 export const EMAIL = "hello@apexdot.io";
 export const PHONE = "+1 (212) 555-0188";

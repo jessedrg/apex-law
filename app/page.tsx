@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Clocks from "./Clocks";
 import Nav from "./Nav";
-import { mandates, practices, OPEN_MANDATES } from "./data";
+import { mandates, practices, techPractices, OPEN_MANDATES } from "./data";
 
 export default function Home() {
   return (
@@ -183,6 +183,25 @@ export default function Home() {
               <div className="item" key={p.name}>
                 <span className="name">{p.name}</span>
                 <span className="market">{p.market}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="tech" className="block tech">
+        <div className="wrap">
+          <p className="kicker">Beyond legal</p>
+          <h2 className="mid">We run tech searches too.</h2>
+          <p className="lede">
+            The same discreet, retained approach applied to the people who build and sell the
+            product &mdash; from founding engineers to go-to-market leaders and applied AI teams.
+          </p>
+          <div className="list tech-list">
+            {techPractices.map((t) => (
+              <div className="item" key={t.name}>
+                <span className="name">{t.name}</span>
+                <span className="market">{t.market}</span>
               </div>
             ))}
           </div>
